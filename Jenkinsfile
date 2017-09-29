@@ -1,5 +1,26 @@
 #!/usr/bin/env groovy
 
-node{
-  echo 'Hello World'
+pipeline{
+  agent any
+  
+  stages{
+    stage('Build'){
+      steps{
+        echo 'Building...' 
+      }
+    }
+    
+    stage('Test'){
+      step{
+        echo 'Testing...' 
+      }
+    }
+    
+    stage('Deploy'){
+      steps{
+        echo 'Deploying...' 
+      }
+    }
+    
+  }
 }
